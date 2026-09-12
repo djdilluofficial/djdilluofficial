@@ -163,28 +163,52 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio, 
 
       <div className="gate-card">
         {/* Shining Scrolling Marquee Banner */}
-        <div className="shining-marquee-bar">
+        <div className="shining-marquee-bar" title="Scroll down & complete 3 steps to unlock free download">
           <div className="shining-glimmer-sweep" />
           <div className="marquee-track">
             <div className="marquee-content">
               <span className="shining-text">🔥 100% FREE DOWNLOAD</span>
-              <span className="marquee-dot">•</span>
-              <span className="shining-text">⚡ 320 KBPS MASTER AUDIO</span>
-              <span className="marquee-dot">•</span>
-              <span className="shining-text">🎧 DJ DILLU VIP DROP</span>
-              <span className="marquee-dot">•</span>
-              <span className="shining-text">🎁 FREE MP3 DOWNLOAD</span>
-              <span className="marquee-dot">•</span>
+              <span className="marquee-fingers-group" aria-label="point down to download">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
+              <span className="shining-text">⚡ COMPLETE 3 STEPS BELOW</span>
+              <span className="marquee-fingers-group" aria-label="point down to download">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
+              <span className="shining-text">🎧 320 KBPS MASTER AUDIO</span>
+              <span className="marquee-fingers-group" aria-label="point down to download">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
+              <span className="shining-text">🎁 DJ DILLU VIP DROP</span>
+              <span className="marquee-fingers-group" aria-label="point down to download">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
             </div>
             <div className="marquee-content" aria-hidden="true">
               <span className="shining-text">🔥 100% FREE DOWNLOAD</span>
-              <span className="marquee-dot">•</span>
-              <span className="shining-text">⚡ 320 KBPS MASTER AUDIO</span>
-              <span className="marquee-dot">•</span>
-              <span className="shining-text">🎧 DJ DILLU VIP DROP</span>
-              <span className="marquee-dot">•</span>
-              <span className="shining-text">🎁 FREE MP3 DOWNLOAD</span>
-              <span className="marquee-dot">•</span>
+              <span className="marquee-fingers-group">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
+              <span className="shining-text">⚡ COMPLETE 3 STEPS BELOW</span>
+              <span className="marquee-fingers-group">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
+              <span className="shining-text">🎧 320 KBPS MASTER AUDIO</span>
+              <span className="marquee-fingers-group">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
+              <span className="shining-text">🎁 DJ DILLU VIP DROP</span>
+              <span className="marquee-fingers-group">
+                <span className="animated-finger finger-left">👇</span>
+                <span className="animated-finger finger-right">👇</span>
+              </span>
             </div>
           </div>
         </div>
