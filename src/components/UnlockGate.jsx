@@ -15,7 +15,8 @@ import {
   Check, 
   Music, 
   ArrowRight, 
-  RotateCcw 
+  RotateCcw,
+  Bell
 } from 'lucide-react';
 import { YoutubeIcon, InstagramIcon, WhatsAppIcon } from './SocialIcons';
 import AudioWave from './AudioWave';
@@ -23,10 +24,12 @@ import { playSuccessChime, playCelebrationFanfare } from '../utils/crypto';
 
 export default function UnlockGate({ config, isPreview = false, onEditInStudio, onOpenOldSongs }) {
   const [steps, setSteps] = useState({
-    youtube: 'idle', // 'idle' | 'checking' | 'completed'
+    youtube: 'idle', // 'idle' | 'checking' | 'need_bell' | 'completed'
     instagram: 'idle',
     whatsapp: 'idle',
   });
+
+  const [youtubeAttempts, setYoutubeAttempts] = useState(0);
 
   const [countdowns, setCountdowns] = useState({
     youtube: 0,
@@ -82,10 +85,10 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio, 
   }, [isFullyUnlocked]);
 
   // Handle Action Click
-  const handleActionClick = (stepKey, url, durationSeconds = 6) => {
+  const handleActionClick = (stepKey, url, durationSeconds = 5) => {
     if (steps[stepKey] === 'completed') return;
 
-    // 1. Open social link in new window/tab or deep-link
+    // 1. Open social link in new window/tab
     if (url) {
       window.open(url, '_blank', 'noopener,noreferrer');
     }
@@ -99,8 +102,16 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio, 
         const currentVal = prev[stepKey];
         if (currentVal <= 1) {
           clearInterval(timerInterval);
-          setSteps(s => ({ ...s, [stepKey]: 'completed' }));
-          playSuccessChime();
+          
+          // If YouTube and first attempt: ask for Bell / double confirmation
+          if (stepKey === 'youtube' && youtubeAttempts === 0) {
+            setYoutubeAttempts(1);
+            setSteps(s => ({ ...s, youtube: 'need_bell' }));
+          } else {
+            setSteps(s => ({ ...s, [stepKey]: 'completed' }));
+            playSuccessChime();
+          }
+
           return { ...prev, [stepKey]: 0 };
         }
         return { ...prev, [stepKey]: currentVal - 1 };
@@ -136,6 +147,7 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio, 
       instagram: 'idle',
       whatsapp: 'idle',
     });
+    setYoutubeAttempts(0);
     setCountdowns({ youtube: 0, instagram: 0, whatsapp: 0 });
     confettiFiredRef.current = false;
     setUnlockedAt(null);
@@ -255,14 +267,18 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio, 
         {/* Step-by-Step Locker Buttons */}
         <div className="steps-container">
           {/* STEP 1: YOUTUBE */}
-          <div className={`step-item ${steps.youtube}`}>
+          <div className={`step-item ${steps.youtube === 'need_bell' ? 'need-action' : steps.youtube}`}>
             <div className="step-left">
               <div className="step-icon-box youtube-icon-box">
                 <YoutubeIcon size={20} />
               </div>
               <div className="step-info">
-                <span className="step-tag">Step 1</span>
-                <span className="step-title">Subscribe to YouTube Channel</span>
+                <span className="step-tag">Step 1 {steps.youtube === 'need_bell' ? '• Verify' : ''}</span>
+                <span className="step-title">
+                  {steps.youtube === 'need_bell' 
+                    ? "Subscribe & Turn ON 🔔 Bell on YouTube"
+                    : "Subscribe to YouTube Channel"}
+                </span>
               </div>
             </div>
 
@@ -270,17 +286,27 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio, 
               {steps.youtube === 'completed' ? (
                 <div className="step-completed-badge">
                   <CheckCircle2 size={18} />
-                  <span>Subscribed</span>
+                  <span>Subscribed & Bell Active</span>
                 </div>
               ) : steps.youtube === 'checking' ? (
                 <button className="step-btn checking" disabled>
                   <Loader2 size={16} className="spin" />
-                  <span>Checking ({countdowns.youtube}s)</span>
+                  <span>Verifying ({countdowns.youtube}s)</span>
+                </button>
+              ) : steps.youtube === 'need_bell' ? (
+                <button 
+                  className="step-btn action-youtube-bell pulse-bell"
+                  onClick={() => handleActionClick('youtube', config?.youtubeUrl || 'https://youtube.com', 4)}
+                  title="Click to confirm Subscription and Bell Icon"
+                >
+                  <Bell size={14} className="bell-ring" />
+                  <span>Hit Bell & Confirm</span>
+                  <ExternalLink size={13} />
                 </button>
               ) : (
                 <button 
                   className="step-btn action-youtube"
-                  onClick={() => handleActionClick('youtube', config?.youtubeUrl || 'https://youtube.com')}
+                  onClick={() => handleActionClick('youtube', config?.youtubeUrl || 'https://youtube.com', 5)}
                 >
                   <span>Subscribe</span>
                   <ExternalLink size={14} />

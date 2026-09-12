@@ -774,6 +774,45 @@ body {
   transform: translateY(-1px);
 }
 
+.step-item.need-action {
+  background: #fffbeb;
+  border-color: #fde68a;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.12);
+}
+
+.action-youtube-bell {
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+}
+
+.action-youtube-bell:hover {
+  background: linear-gradient(135deg, #c2410c 0%, #b91c1c 100%);
+  transform: translateY(-1px);
+}
+
+.pulse-bell {
+  animation: pulseBellBtn 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseBellBtn {
+  0%, 100% { box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(234, 88, 12, 0.6); }
+}
+
+.bell-ring {
+  animation: bellRingAnim 1.2s infinite ease-in-out;
+  transform-origin: top center;
+}
+
+@keyframes bellRingAnim {
+  0%, 100% { transform: rotate(0); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-10deg); }
+}
+
 .action-instagram {
   background: var(--gradient-instagram);
   color: #ffffff;
