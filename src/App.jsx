@@ -5,14 +5,15 @@ import CreatorStudio from './components/CreatorStudio';
 import UnlockGate from './components/UnlockGate';
 import DeployGuideModal from './components/DeployGuideModal';
 import { decryptPayload } from './utils/crypto';
+import dilluCover from './assets/Dillu.jpg';
 
 const DEFAULT_CONFIG = {
   title: "All Folk + ODia Mix (Dj Ramp Dance Mix)",
-  artist: "Dj Dillu",
-  coverArt: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&auto=format&fit=crop&q=80",
-  youtubeUrl: "https://youtube.com/@blackhatbeats?sub_confirmation=1",
-  instagramUrl: "https://instagram.com/blackhatbeats",
-  whatsappUrl: "https://whatsapp.com/channel/0029VaTestChannel",
+  artist: "Dj Dillu Official",
+  coverArt: dilluCover,
+  youtubeUrl: "https://www.youtube.com/c/DILEEPKUMARMIXES?sub_confirmation=1",
+  instagramUrl: "https://www.instagram.com/dj_dillu__/",
+  whatsappUrl: "https://wa.me/919949362144",
   targetUrl: "https://www.mediafire.com/file/a4fdrmisdo56d8k/All_Folk_%252B_ODia_Mix_Dj_Ramp_Dance_Mix_Dj_Dillu.mp3/file",
   previewAudioUrl: ""
 };
