@@ -60,7 +60,7 @@ export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, o
           </a>
 
           <a
-            href="https://www.instagram.com/dj_dillu__/"
+            href="https://www.instagram.com/djdillu__/"
             target="_blank"
             rel="noopener noreferrer"
             className="gh-link-btn"
