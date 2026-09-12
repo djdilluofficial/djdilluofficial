@@ -15,7 +15,7 @@ const DEFAULT_CONFIG = {
   youtubeUrl: "https://www.youtube.com/@Dj-Dillu?sub_confirmation=1",
   instagramUrl: "https://www.instagram.com/djdillu__/",
   whatsappUrl: "https://chat.whatsapp.com/H8eHV3Z3LmDDL16DjzF0jg?s=cl&p=a&mlu=4&ilr=4",
-  targetUrl: "https://www.mediafire.com/file/a4fdrmisdo56d8k/All_Folk_%252B_ODia_Mix_Dj_Ramp_Dance_Mix_Dj_Dillu.mp3/file",
+  targetUrl: "https://www.mediafire.com/file/u0m3k1tcn086j6w/All_Folk_%252B_ODia_Mix_Dj_Ramp_Dance_Mix_Dj_Dillu.mp3/file",
   previewAudioUrl: ""
 };
 
