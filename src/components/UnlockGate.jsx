@@ -201,8 +201,8 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio }
             <h1 className="track-title">{config?.title || "Exclusive Sound / Audio File"}</h1>
             <p className="track-subtitle">
               {isFullyUnlocked 
-                ? "🎉 Success! Your access has been unlocked below." 
-                : "Complete all 3 quick steps to unlock the direct MP3 download!"}
+                ? "🎉 Success! Your VIP download is ready below." 
+                : "Complete all 3 quick steps below to get your exclusive MP3 download!"}
             </p>
 
             <AudioWave isPlaying={isFullyUnlocked || isPlayingAudio} bars={20} />

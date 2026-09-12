@@ -1,6 +1,6 @@
 import React from 'react';
-import { Lock, Sparkles, PlusCircle, Eye, HelpCircle } from 'lucide-react';
-import { GithubIcon } from './SocialIcons';
+import { Headphones, Sparkles, PlusCircle, Eye, HelpCircle } from 'lucide-react';
+import { YoutubeIcon, InstagramIcon } from './SocialIcons';
 
 export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, onOpenGuide }) {
   return (
@@ -8,12 +8,12 @@ export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, o
       <div className="navbar-content">
         <div className="navbar-brand" onClick={() => isAdminMode && setActiveTab('studio')}>
           <div className="brand-icon-wrapper">
-            <Lock className="brand-icon" size={20} />
+            <Headphones className="brand-icon" size={20} />
             <Sparkles className="brand-sparkle" size={12} />
           </div>
           <div className="brand-text">
-            <span className="brand-name">Audience<span className="brand-highlight">Grow</span></span>
-            <span className="brand-badge">Sub2Unlock</span>
+            <span className="brand-name">DJ Dillu <span className="brand-highlight">Official</span></span>
+            <span className="brand-badge">VIP Fan Pass</span>
           </div>
         </div>
 
@@ -50,13 +50,23 @@ export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, o
           )}
 
           <a
-            href="https://github.com"
+            href="https://www.youtube.com/c/DILEEPKUMARMIXES?sub_confirmation=1"
             target="_blank"
             rel="noopener noreferrer"
             className="gh-link-btn"
-            title="AudienceGrow Gate"
+            title="Subscribe on YouTube"
           >
-            <GithubIcon size={18} />
+            <YoutubeIcon size={18} />
+          </a>
+
+          <a
+            href="https://www.instagram.com/dj_dillu__/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="gh-link-btn"
+            title="Follow on Instagram"
+          >
+            <InstagramIcon size={18} />
           </a>
         </div>
       </div>

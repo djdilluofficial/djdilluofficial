@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Zap, Sparkles } from 'lucide-react';
+import { ShieldCheck, Music, Sparkles } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -7,20 +7,20 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-badges">
           <div className="footer-badge">
-            <Shield size={14} />
-            <span>Anti-Bypass Protection</span>
+            <ShieldCheck size={16} />
+            <span>Official Master Quality</span>
           </div>
           <div className="footer-badge">
-            <Zap size={14} />
-            <span>100% Free GitHub Pages Ready</span>
+            <Music size={16} />
+            <span>Direct High-Speed Download</span>
           </div>
           <div className="footer-badge">
-            <Sparkles size={14} />
-            <span>High-Converting Sub2Unlock</span>
+            <Sparkles size={16} />
+            <span>Exclusive VIP Fan Access</span>
           </div>
         </div>
         <p className="footer-copyright">
-          AudienceGrow • Built for Creators, Artists & Producers to scale YouTube, Instagram & WhatsApp communities.
+          © 2026 DJ Dillu Official • All Rights Reserved. Thank you for supporting the music!
         </p>
       </div>
     </footer>
