@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AudioWave({ isPlaying = true, bars = 16, color = '#4f46e5' }) {
+export default function AudioWave({ isPlaying = true, bars = 16, color = '#0284c7' }) {
   return (
     <div className="audio-wave-container" aria-hidden="true">
       {Array.from({ length: bars }).map((_, i) => {

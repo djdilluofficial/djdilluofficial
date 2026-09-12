@@ -29,7 +29,7 @@
   --accent-green: #16a34a;
   --accent-red: #dc2626;
 
-  --gradient-brand: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #7c3aed 100%);
+  --gradient-brand: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #2563eb 100%);
   --gradient-green: linear-gradient(135deg, #16a34a 0%, #059669 100%);
   --gradient-instagram: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   --gradient-youtube: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
@@ -37,7 +37,7 @@
   
   --shadow-card: 0 20px 35px -5px rgba(15, 23, 42, 0.06), 0 10px 20px -5px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(226, 232, 240, 0.8);
   --shadow-hover: 0 25px 45px -5px rgba(15, 23, 42, 0.1), 0 12px 24px -5px rgba(15, 23, 42, 0.06);
-  --shadow-button: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
+  --shadow-button: 0 4px 14px 0 rgba(2, 132, 199, 0.25);
 }
 
 * {
@@ -89,13 +89,13 @@ body {
 .bg-gradient-spotlight.top-left {
   top: -150px;
   left: -150px;
-  background: radial-gradient(circle, #3b82f6, #6366f1);
+  background: radial-gradient(circle, #38bdf8, #0284c7);
 }
 
 .bg-gradient-spotlight.bottom-right {
   bottom: -150px;
   right: -150px;
-  background: radial-gradient(circle, #ec4899, #8b5cf6);
+  background: radial-gradient(circle, #34d399, #059669);
 }
 
 /* NAVBAR */
@@ -298,7 +298,7 @@ body {
   height: 300px;
   top: 0%;
   left: 15%;
-  background: #bfdbfe;
+  background: #bae6fd;
 }
 
 .glow-2 {
@@ -306,7 +306,7 @@ body {
   height: 260px;
   bottom: 0%;
   right: 15%;
-  background: #fbcfe8;
+  background: #bbf7d0;
 }
 
 .gate-card {
