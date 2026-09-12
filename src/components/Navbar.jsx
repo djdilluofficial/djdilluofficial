@@ -38,15 +38,6 @@ export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, o
         )}
 
         <div className="navbar-actions">
-          <button
-            className={`old-songs-nav-btn ${activeTab === 'old-songs' ? 'active' : ''}`}
-            onClick={() => setActiveTab(activeTab === 'old-songs' ? 'gate' : 'old-songs')}
-            title="Browse & download all old classic songs"
-          >
-            <Music size={15} />
-            <span>Old Songs Download</span>
-          </button>
-
           {isAdminMode && (
             <button
               className="guide-btn"

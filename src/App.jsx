@@ -88,6 +88,27 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="main-content">
+        {/* In-Between Section Switcher (Latest Release vs Old Songs Archive) */}
+        {!isAdminMode && (
+          <div className="section-tab-switcher-wrapper">
+            <div className="section-tab-switcher">
+              <button
+                className={`tab-switch-btn ${activeTab === 'gate' ? 'active' : ''}`}
+                onClick={() => setActiveTab('gate')}
+              >
+                <span>⚡ Latest VIP Release</span>
+              </button>
+
+              <button
+                className={`tab-switch-btn ${activeTab === 'old-songs' ? 'active' : ''}`}
+                onClick={() => setActiveTab('old-songs')}
+              >
+                <span>🎵 Old Songs Download (25+)</span>
+              </button>
+            </div>
+          </div>
+        )}
+
         {activeTab === 'old-songs' ? (
           <OldSongsArchive onBackToGate={() => setActiveTab('gate')} />
         ) : isAdminMode && activeTab === 'studio' ? (
