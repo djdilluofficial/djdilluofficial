@@ -150,6 +150,33 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio }
       <div className="ambient-glow glow-2" />
 
       <div className="gate-card">
+        {/* Shining Scrolling Marquee Banner */}
+        <div className="shining-marquee-bar">
+          <div className="shining-glimmer-sweep" />
+          <div className="marquee-track">
+            <div className="marquee-content">
+              <span className="shining-text">🔥 100% FREE DOWNLOAD</span>
+              <span className="marquee-dot">•</span>
+              <span className="shining-text">⚡ 320 KBPS MASTER AUDIO</span>
+              <span className="marquee-dot">•</span>
+              <span className="shining-text">🎧 DJ DILLU VIP DROP</span>
+              <span className="marquee-dot">•</span>
+              <span className="shining-text">🎁 FREE MP3 DOWNLOAD</span>
+              <span className="marquee-dot">•</span>
+            </div>
+            <div className="marquee-content" aria-hidden="true">
+              <span className="shining-text">🔥 100% FREE DOWNLOAD</span>
+              <span className="marquee-dot">•</span>
+              <span className="shining-text">⚡ 320 KBPS MASTER AUDIO</span>
+              <span className="marquee-dot">•</span>
+              <span className="shining-text">🎧 DJ DILLU VIP DROP</span>
+              <span className="marquee-dot">•</span>
+              <span className="shining-text">🎁 FREE MP3 DOWNLOAD</span>
+              <span className="marquee-dot">•</span>
+            </div>
+          </div>
+        </div>
+
         {/* Top Header / Track info */}
         <div className="gate-header">
           <div className="cover-art-container">
