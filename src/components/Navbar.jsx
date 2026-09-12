@@ -1,12 +1,12 @@
 import React from 'react';
-import { Headphones, Sparkles, PlusCircle, Eye, HelpCircle } from 'lucide-react';
+import { Headphones, Sparkles, PlusCircle, Eye, HelpCircle, Music } from 'lucide-react';
 import { YoutubeIcon, InstagramIcon } from './SocialIcons';
 
 export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, onOpenGuide }) {
   return (
     <header className="navbar-container">
       <div className="navbar-content">
-        <div className="navbar-brand" onClick={() => isAdminMode && setActiveTab('studio')}>
+        <div className="navbar-brand" onClick={() => setActiveTab('gate')}>
           <div className="brand-icon-wrapper">
             <Headphones className="brand-icon" size={20} />
             <Sparkles className="brand-sparkle" size={12} />
@@ -38,6 +38,15 @@ export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, o
         )}
 
         <div className="navbar-actions">
+          <button
+            className={`old-songs-nav-btn ${activeTab === 'old-songs' ? 'active' : ''}`}
+            onClick={() => setActiveTab(activeTab === 'old-songs' ? 'gate' : 'old-songs')}
+            title="Browse & download all old classic songs"
+          >
+            <Music size={15} />
+            <span>Old Songs Download</span>
+          </button>
+
           {isAdminMode && (
             <button
               className="guide-btn"

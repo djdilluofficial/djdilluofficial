@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CreatorStudio from './components/CreatorStudio';
 import UnlockGate from './components/UnlockGate';
+import OldSongsArchive from './components/OldSongsArchive';
 import DeployGuideModal from './components/DeployGuideModal';
 import { decryptPayload } from './utils/crypto';
 import latestThumbnail from './assets/latest-thumbnail.png';
@@ -19,7 +20,7 @@ const DEFAULT_CONFIG = {
 };
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('gate'); // default to 'gate' (user-facing mode)
+  const [activeTab, setActiveTab] = useState('gate'); // 'gate' | 'old-songs' | 'studio'
   const [currentConfig, setCurrentConfig] = useState(DEFAULT_CONFIG);
   const [isAdminMode, setIsAdminMode] = useState(false);
   const [isGuideOpen, setIsGuideOpen] = useState(false);
@@ -31,7 +32,6 @@ export default function App() {
       const search = window.location.search;
       
       const searchParams = new URLSearchParams(search);
-      // Admin studio is hidden by default. Only enabled if URL contains ?admin=true or ?studio=true
       if (
         searchParams.get('admin') === 'true' || 
         searchParams.get('studio') === 'true' || 
@@ -39,6 +39,10 @@ export default function App() {
         hash.includes('studio=true')
       ) {
         setIsAdminMode(true);
+      }
+
+      if (hash.includes('old-songs') || searchParams.get('tab') === 'old-songs') {
+        setActiveTab('old-songs');
       }
 
       let dataParam = null;
@@ -84,7 +88,9 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="main-content">
-        {isAdminMode && activeTab === 'studio' ? (
+        {activeTab === 'old-songs' ? (
+          <OldSongsArchive onBackToGate={() => setActiveTab('gate')} />
+        ) : isAdminMode && activeTab === 'studio' ? (
           <CreatorStudio 
             currentConfig={currentConfig}
             onChangeConfig={setCurrentConfig}
@@ -95,6 +101,7 @@ export default function App() {
             <UnlockGate 
               config={currentConfig}
               isPreview={false}
+              onOpenOldSongs={() => setActiveTab('old-songs')}
               onEditInStudio={isAdminMode ? () => setActiveTab('studio') : null}
             />
           </div>

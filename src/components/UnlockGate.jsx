@@ -21,7 +21,7 @@ import { YoutubeIcon, InstagramIcon, WhatsAppIcon } from './SocialIcons';
 import AudioWave from './AudioWave';
 import { playSuccessChime, playCelebrationFanfare } from '../utils/crypto';
 
-export default function UnlockGate({ config, isPreview = false, onEditInStudio }) {
+export default function UnlockGate({ config, isPreview = false, onEditInStudio, onOpenOldSongs }) {
   const [steps, setSteps] = useState({
     youtube: 'idle', // 'idle' | 'checking' | 'completed'
     instagram: 'idle',
@@ -416,6 +416,26 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio }
                 Edit Details in Creator Studio &rarr;
               </button>
             )}
+          </div>
+        )}
+
+        {/* Old Songs Download Archive CTA */}
+        {onOpenOldSongs && (
+          <div className="old-songs-portal-card" onClick={onOpenOldSongs}>
+            <div className="old-songs-card-left">
+              <div className="old-songs-icon-circle">
+                <Music size={18} />
+              </div>
+              <div className="old-songs-text-group">
+                <div className="old-songs-badge-pill">Classic Archive • 25+ Songs</div>
+                <h4 className="old-songs-card-title">Old Songs & Classic Mixes Download</h4>
+                <p className="old-songs-card-desc">Direct GDrive & MediaFire links for all previous DJ mixes</p>
+              </div>
+            </div>
+            <button className="old-songs-cta-btn" onClick={onOpenOldSongs}>
+              <span>Open</span>
+              <ArrowRight size={14} />
+            </button>
           </div>
         )}
       </div>
