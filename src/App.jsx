@@ -11,7 +11,7 @@ const DEFAULT_CONFIG = {
   title: "All Folk + ODia Mix (Dj Ramp Dance Mix)",
   artist: "Dj Dillu Official",
   coverArt: dilluCover,
-  youtubeUrl: "https://www.youtube.com/c/DILEEPKUMARMIXES?sub_confirmation=1",
+  youtubeUrl: "https://www.youtube.com/@Dj-Dillu?sub_confirmation=1",
   instagramUrl: "https://www.instagram.com/dj_dillu__/",
   whatsappUrl: "https://wa.me/919949362144",
   targetUrl: "https://www.mediafire.com/file/a4fdrmisdo56d8k/All_Folk_%252B_ODia_Mix_Dj_Ramp_Dance_Mix_Dj_Dillu.mp3/file",
