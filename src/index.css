@@ -1157,6 +1157,253 @@ body {
   color: var(--text-muted);
 }
 
+/* =========================================
+   VISITOR COUNTER & REAL-TIME AUDIENCE STYLES
+   ========================================= */
+
+/* 1. Compact Navbar Badge */
+.visitor-badge-compact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.22);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0369a1;
+  letter-spacing: -0.01em;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.visitor-badge-compact:hover {
+  background: rgba(2, 132, 199, 0.14);
+  border-color: rgba(2, 132, 199, 0.4);
+  transform: translateY(-1px);
+}
+
+.visitor-badge-icon {
+  color: #0284c7;
+}
+
+.visitor-count-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.visitor-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+/* 2. Track Details Pill */
+.visitor-pill-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.4rem 0.95rem;
+  margin: 0.6rem auto 0.4rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.visitor-pill-left,
+.visitor-pill-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.visitor-pill-divider {
+  width: 1px;
+  height: 14px;
+  background: #cbd5e1;
+}
+
+.visitor-online-text strong {
+  color: #16a34a;
+  font-weight: 800;
+}
+
+.visitor-total-text strong {
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+.visitor-icon-eye {
+  color: #0284c7;
+}
+
+/* 3. Full Footer Counter Widget */
+.visitor-counter-widget {
+  width: 100%;
+  max-width: 680px;
+  margin: 0.25rem 0 1rem;
+}
+
+.visitor-counter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.85rem 1.25rem;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.9) 0%, rgba(241, 245, 249, 0.95) 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+}
+
+.visitor-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.visitor-stat-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.visitor-stat-icon-wrap.total {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0284c7;
+}
+
+.visitor-stat-icon-wrap.online {
+  background: rgba(22, 163, 74, 0.12);
+  color: #16a34a;
+}
+
+.visitor-stat-icon-wrap.verified {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.visitor-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.visitor-stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.visitor-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.visitor-stat-value.count-glow {
+  color: #0369a1;
+}
+
+.visitor-stat-value.live-glow {
+  color: #15803d;
+}
+
+.visitor-stat-value.verified-glow {
+  color: #b91c1c;
+  font-size: 0.95rem;
+}
+
+.visitor-sublabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.1rem 0.35rem;
+  background: rgba(22, 163, 74, 0.15);
+  color: #15803d;
+  border-radius: 4px;
+  margin-left: 0.25rem;
+}
+
+.visitor-skeleton {
+  opacity: 0.5;
+  animation: pulse-skeleton 1.2s infinite;
+}
+
+/* Pulsing Green LED Indicator */
+.visitor-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulse-live-dot 1.8s infinite cubic-bezier(0.66, 0, 0, 1);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.visitor-pulse-dot.static-pulse {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 6px;
+  height: 6px;
+}
+
+@keyframes pulse-live-dot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes pulse-skeleton {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@media (max-width: 640px) {
+  .visitor-counter-inner {
+    flex-direction: column;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+    width: 100%;
+  }
+
+  .visitor-stat-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .visitor-badge-compact .visitor-label {
+    display: none;
+  }
+}
+
 /* CREATOR STUDIO (IF ADMIN OPENED) */
 .studio-hero {
   text-align: center;

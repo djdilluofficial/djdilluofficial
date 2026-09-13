@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { YoutubeIcon, InstagramIcon, WhatsAppIcon } from './SocialIcons';
 import AudioWave from './AudioWave';
+import VisitorCounter from './VisitorCounter';
 import { playSuccessChime, playCelebrationFanfare } from '../utils/crypto';
 
 export default function UnlockGate({ config, isPreview = false, onEditInStudio, onOpenOldSongs }) {
@@ -267,6 +268,8 @@ export default function UnlockGate({ config, isPreview = false, onEditInStudio, 
                 ? "🎉 Success! Your VIP download is ready below." 
                 : "Complete all 3 quick steps below to get your exclusive MP3 download!"}
             </p>
+
+            <VisitorCounter variant="pill" />
 
             <AudioWave isPlaying={isFullyUnlocked || isPlayingAudio} bars={20} />
           </div>

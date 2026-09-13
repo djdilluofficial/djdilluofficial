@@ -1,10 +1,14 @@
 import React from 'react';
 import { ShieldCheck, Music, Sparkles } from 'lucide-react';
+import VisitorCounter from './VisitorCounter';
 
 export default function Footer() {
   return (
     <footer className="footer-container">
       <div className="footer-content">
+        {/* Real-time VIP Fan & Visitor Tracker */}
+        <VisitorCounter variant="full" />
+
         <div className="footer-badges">
           <div className="footer-badge">
             <ShieldCheck size={16} />

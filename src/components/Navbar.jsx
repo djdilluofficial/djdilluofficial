@@ -1,6 +1,7 @@
 import React from 'react';
 import { Headphones, Sparkles, PlusCircle, Eye, HelpCircle, Music } from 'lucide-react';
 import { YoutubeIcon, InstagramIcon } from './SocialIcons';
+import VisitorCounter from './VisitorCounter';
 
 export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, onOpenGuide }) {
   return (
@@ -38,6 +39,9 @@ export default function Navbar({ activeTab, setActiveTab, isAdminMode = false, o
         )}
 
         <div className="navbar-actions">
+          {/* Live Visitor Count Badge in Navbar */}
+          <VisitorCounter variant="compact" />
+
           {isAdminMode && (
             <button
               className="guide-btn"
